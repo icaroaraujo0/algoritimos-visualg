@@ -2,8 +2,8 @@ algoritmo "AV2-LOGICA-DE-PROGRAMAÇAO"
 
 // Disciplina  :  Lógica de Programação
 // Professor   : Ronaldo Cysne
-// Descrição   : Aqui você descreve o que o programa faz! (função)
-// Autor(a)    : Antonio Ícaro Araújo Oliveiro
+// Descrição   : Programa de registro de pedidos que coleta informações do cliente e dos produtos, realiza cálculos necessários e gera um resumo da compra.
+// Autor(a)    : Antonio Ícaro Araújo Oliveira
 // Matrícula   : 56055328
 
 var
@@ -16,11 +16,11 @@ var
   desconto: real
   totalPedido: real
   valorFinal: real
-   entregaGratis: caractere
+  entregaGratis: caractere
   valorEntrega: real
 
 inicio
-  
+
   totalPedido <- 0
   desconto <- 0
   valorEntrega <- 0
@@ -35,26 +35,26 @@ inicio
   leia(quantidadeItem)
 
   para contador de 1 ate quantidadeItem faca
-  escreval("Digite o valor do(s) item(ns) ", contador, ":")
-  leia(valorItem)
+    escreval("Digite o valor do(s) item(ns) ", contador, ":")
+    leia(valorItem)
 
-  totalPedido <- totalPedido + valorItem
-  fimpara 
+    totalPedido <- totalPedido + valorItem
+  fimpara
 
   se (totalPedido >= 100) entao
-  temDesconto <- "SIM"
-  desconto <- totalPedido * 0.10
+    temDesconto <- "SIM"
+    desconto <- totalPedido * 0.10
   senao
-  temDesconto <- "NAO" 
+    temDesconto <- "NAO"
   fimse
 
   valorFinal <- totalPedido - desconto
 
   se (valorFinal >= 80) entao
-  entregaGratis <- "SIM"
+    entregaGratis <- "SIM"
   senao
-  entregaGratis <- "NAO"
-  valorEntrega <- 10
+    entregaGratis <- "NAO"
+    valorEntrega <- 10
   fimse
 
   valorFinal <- valorFinal + valorEntrega
@@ -70,5 +70,5 @@ inicio
   escreval("Valor da entrega: "valorEntrega)
   escreval("Valor final a pagar: "valorFinal)
   escreval("Agradecemos a preferencia! ")
-  
+
 fimalgoritmo
